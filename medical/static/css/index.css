@@ -86,6 +86,7 @@ form{
     justify-content: center;
     flex-direction: column;
     gap: 5vh;
+    margin-bottom: 10vh;
 }
 
 input[type='email']{
@@ -103,3 +104,28 @@ input[type='submit']{
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+
+   nav ul{
+    display: none;
+   } 
+
+   main{
+    flex-direction: column;
+   }
+
+   input[type='email'], input[type='submit'] {
+    width: 80vw;
+   }
+    
+}
+
+@media screen and (max-width: 992px) {
+
+    .hero_img{
+        height: 14em;
+        width: 22em;  
+    }
+     
+ }
