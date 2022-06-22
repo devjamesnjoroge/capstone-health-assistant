@@ -22,3 +22,84 @@
 body{
     background-color: var(--midnight-green);
 }
+
+nav{
+    padding: 20px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+nav span{
+    color: var(--light);
+    font-size: 32px;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 50px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+nav ul li:nth-child(2){
+    padding: 5px 10px;
+    background-color: var(--blue-green);
+    border-radius: 2px;
+}
+
+main{
+    display: flex;
+    padding: 10vh 5vw;
+    justify-content: space-between;
+    justify-content: first baseline;
+    gap: 5vw;
+}
+
+.col-md-6:nth-child(1){
+    padding-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: var(--light);
+}
+
+.hero_img{
+    background-image: url('../assets/annelies-geneyn-bhBONc07WsI-unsplash.jpg');
+    height: 18em;
+    width: 30em;
+    background-position: center;
+    background-size: cover;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+input[type='email']{
+    padding: 10px 5px;
+    width: 40vw;
+    outline: none;
+    border: none;
+}
+
+input[type='submit']{
+    height: 44px;
+    width: 15vw;
+    background-color: var(--blue-green);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
