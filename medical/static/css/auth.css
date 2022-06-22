@@ -48,3 +48,13 @@ button[type='button']{
     background-color: var(--blue-green);
     color: var(--light);
 }
+
+#btn2{
+    float: left;
+}
+
+#btn3{
+    float: right;
+    background-color: var(--blue-green);
+    color: var(--light);
+}
