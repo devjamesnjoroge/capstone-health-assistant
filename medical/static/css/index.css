@@ -56,6 +56,18 @@ nav ul li:nth-child(2){
     border-radius: 2px;
 }
 
+.hamburger{
+    display: none;
+}
+
+.hamburger div{
+    height: 2px;
+    width: 32px;
+    background-color: var(--light);
+    margin: 7px 0;
+    cursor: pointer;
+}
+
 main{
     display: flex;
     padding: 10vh 5vw;
@@ -105,7 +117,12 @@ input[type='submit']{
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+    
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
 
    nav ul{
     display: none;
