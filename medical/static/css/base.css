@@ -148,7 +148,7 @@ nav .col_nav{
 
 /* DASHBOARD TEMPLATE STYLING */
 
-.history{
+.history, .diet{
     margin-top: 7vh;
     color: var(--light);
     display: flex;
@@ -156,7 +156,7 @@ nav .col_nav{
     width: 80vw;
 }
 
-.history .header{
+.history .header, .diet .header{
     display: flex;
     justify-content: space-between;
 }
@@ -238,7 +238,7 @@ nav .col_nav{
     }
 
     /* HISTORY TEMPLATE STYLING */
-    .history{
+    .history, .diet{
         width: 100%;
         padding: 0 5vw;
     }
@@ -299,7 +299,7 @@ table {
   }
   th { 
     background: #333; 
-    color: white; 
+    color: var(--light); 
     font-weight: bold; 
   }
   td, th { 
@@ -346,11 +346,21 @@ only screen and (max-width: 760px),
 	}
 
     /*
-	Label the data
+	Label the data history
 	*/
-	td:nth-of-type(1):before { content: "Disease diagnosed"; }
-	td:nth-of-type(2):before { content: "Age diagnosed"; }
-	td:nth-of-type(3):before { content: "Treatment"; }
-	td:nth-of-type(4):before { content: "Lab results"; }
-	td:nth-of-type(5):before { content: "Recurrency"; }
+	.history td:nth-of-type(1):before { content: "Disease diagnosed"; }
+	.history td:nth-of-type(2):before { content: "Age diagnosed"; }
+	.history td:nth-of-type(3):before { content: "Treatment"; }
+	.history td:nth-of-type(4):before { content: "Lab results"; }
+	.history td:nth-of-type(5):before { content: "Recurrency"; }
+
+    /* DIET */
+
+	.diet td:nth-of-type(1):before { content: "Carbohydarates"; }
+	.diet td:nth-of-type(2):before { content: "Vitamins"; }
+	.diet td:nth-of-type(3):before { content: "Proteins"; }
+	.diet td:nth-of-type(4):before { content: "Junk"; }
+	.diet td:nth-of-type(5):before { content: "Water(litres)"; }
+
+
 }
