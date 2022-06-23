@@ -15,8 +15,12 @@
     <nav>
         <span class="logo">HEALTH-ASSISTENTE</span>
         <ul>
-            <li><a href="">Login</a></li>
-            <li><a href="">Signup</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="/auth/logout/">Logout</a></li>
+            {% else %}
+            <li><a href="/auth/login/">Login</a></li>
+            <li><a href="/auth/register/">Signup</a></li>
+            {% endif %}
         </ul>
 
         <div class="hamburger">

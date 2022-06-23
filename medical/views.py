@@ -21,3 +21,7 @@ def register(request):
         return redirect('/')
 
     return render(request, 'authentication/register.html')
+
+
+def home(request):
+    return render(request, 'home.html')
