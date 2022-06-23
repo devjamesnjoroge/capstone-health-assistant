@@ -53,15 +53,16 @@ def posts(request):
 
 @login_required(login_url='/auth/login/')
 def create_profile(request):
-    if request.user.profile:
+    if  Profile.objects.filter(user=request.user).exists():
         return render(request, 'errors/403.html')
-    if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES)
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user = request.user
-            profile.save()
-            return redirect('/profile/')
     else:
-        form = ProfileForm()
+        if request.method == 'POST':
+            form = ProfileForm(request.POST, request.FILES)
+            if form.is_valid():
+                profile = form.save(commit=False)
+                profile.user = request.user
+                profile.save()
+                return redirect('/profile/')
+        else:
+            form = ProfileForm()
     return render(request, 'forms/create_profile.html', {'form': form})
