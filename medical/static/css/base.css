@@ -134,7 +134,16 @@ nav .col_nav{
 .dashboard .grid .col{
     width: 20rem;
     height: 15rem;
-    background-color: red;
+    background-color: var(--blue-green);
+    position: relative;
+    padding: 10px;
+}
+
+.dashboard .grid .col svg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {
@@ -144,6 +153,8 @@ nav .col_nav{
         background-color: var(--dark-green);
         position: absolute;
         bottom: 0;
+        z-index: 999;
+        position: fixed;
     }
     footer .container{
         display: flex;
@@ -172,6 +183,7 @@ nav .col_nav{
     main{
         width: 100%;
         margin: 0;
+        overflow-y: scroll;
     }
 
     /* PROFILE TEMPLATE STYLING */
@@ -198,10 +210,16 @@ nav .col_nav{
         width: 100vw;
     }
 
+    /* DASHBOARD TEMPLATE STYLING */
+    .dashboard{
+        padding-left: 5rem;
+        margin-bottom: 10vh;
+    }
+
     
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     .sidebar_row{
         padding: 5px 2vw;
     }
@@ -227,5 +245,15 @@ nav .col_nav{
 
     section, nav{
         width: 100vw;
+    }
+
+  /* DASHBOARD TEMPLATE STYLING */
+
+    .dashboard{
+        margin-bottom: 10vh;
+    }
+
+    .dashboard .grid{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
