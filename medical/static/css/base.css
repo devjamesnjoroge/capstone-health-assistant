@@ -42,12 +42,12 @@ header .container{
     color: var(--light);
     margin: 20px 0;
     cursor: pointer;
+    padding: 3px 0;
 }
 
 .sidebar_row:hover{
     background-color: var(--blue-green);
     border-radius: 5px;
-    padding: 5px 0;
 }
 
 svg{
@@ -55,5 +55,42 @@ svg{
 }
 
 .sidebar_row:nth-last-child(1){
-    margin-top: 10vh;
+    margin-top: 7vh;
+}
+
+@media screen and (max-width: 992px) {
+
+    footer{
+        width: 100%;
+        background-color: var(--dark-green);
+        position: absolute;
+        bottom: 0;
+    }
+    footer .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sidebar_row{
+        padding: 5px 5vw;
+        margin: 0;
+    }
+
+    .sidebar_row:nth-last-child(1){
+        margin: 0;
+    }
+
+    svg{
+        height: 30px;
+        width: 30px;
+        transform: scale(0.9);
+    }
+
+    
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar_row{
+        padding: 5px 2vw;
+    }
 }
