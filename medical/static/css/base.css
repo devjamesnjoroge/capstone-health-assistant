@@ -148,7 +148,7 @@ nav .col_nav{
 
 /* DASHBOARD TEMPLATE STYLING */
 
-.history, .diet{
+.history, .diet, .posts{
     margin-top: 7vh;
     color: var(--light);
     display: flex;
@@ -156,7 +156,7 @@ nav .col_nav{
     width: 80vw;
 }
 
-.history .header, .diet .header{
+.history .header, .diet .header, .posts .header{
     display: flex;
     justify-content: space-between;
 }
@@ -167,6 +167,10 @@ nav .col_nav{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: var(--blue-green);
+}
 @media screen and (max-width: 992px) {
 
     footer{
@@ -238,7 +242,7 @@ nav .col_nav{
     }
 
     /* HISTORY TEMPLATE STYLING */
-    .history, .diet{
+    .history, .diet, .posts{
         width: 100%;
         padding: 0 5vw;
     }

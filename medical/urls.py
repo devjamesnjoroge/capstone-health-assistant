@@ -11,4 +11,6 @@ urlpatterns = [
     path('profile/', views.profile),
     path('dashboard/', views.dashboard),
     path('history/', views.history),
+    path('diet/', views.diet),
+    path('posts/', views.posts),
 ]

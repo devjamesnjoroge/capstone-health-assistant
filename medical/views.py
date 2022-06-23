@@ -36,3 +36,9 @@ def dashboard(request):
 
 def history(request):
     return render(request, 'history.html')
+
+def diet(request):
+    return render(request, 'diet.html')
+
+def posts(request):
+    return render(request, 'posts.html')
