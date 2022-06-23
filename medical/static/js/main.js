@@ -1,4 +1,15 @@
 $(document).ready(function(){
+
+    function wrapLinks(){
+        host = 'http://127.0.0.1:8000/'
+        locations = ['home', 'dashboard', 'history', 'posts', 'diet', 'profile']
+        locations.map((loc)=>{
+            $('#'+loc+'_link').click(function(){
+                window.location.replace(host+loc+"/");
+            })
+        })
+    }
+
     var mql = window.matchMedia("(max-width: 992px)")
 
     mediaqueryresponse(mql)
@@ -9,16 +20,12 @@ $(document).ready(function(){
         if (mql.matches) {
 
             $('header').replaceWith($('<footer/>').html($('header').html()));
+            wrapLinks()
             
         } else{
             $('footer').replaceWith($('<header/>').html($('footer').html()));
+            wrapLinks()
         }
     }
 
-    $('#profile_link').click(function(){
-        window.location.replace("http://127.0.0.1:8000/profile/");
-    })
-    $('#home_link').click(function(){
-        window.location.replace("http://127.0.0.1:8000/home/");
-    })
 })
