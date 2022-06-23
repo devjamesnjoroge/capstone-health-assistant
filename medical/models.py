@@ -36,3 +36,20 @@ class MedicalHistory(models.Model):
 
     def __repr__(self):
         print(self.user.username)
+
+class Diet(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    carbohydrates = models.TextField(max_length=100)
+    proteins = models.TextField(max_length=100)
+    vitamins = models.TextField(max_length=100)
+    junk = models.TextField(max_length=100)
+    water_litres = models.PositiveIntegerField()
+
+    def save_diet(self):
+        self.save()
+
+    def delete_diet(self):
+        self.delete()
+
+    def __repr__(self):
+        print(self.user.username)

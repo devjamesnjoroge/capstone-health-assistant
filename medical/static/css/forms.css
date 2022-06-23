@@ -27,6 +27,7 @@ form{
     background-color: var(--cream);
     padding: 5vh 5vw;
     border-radius: 10px;
+    margin-bottom: 10vh
 }
 
 input[type='submit']{
