@@ -76,6 +76,10 @@ svg{
         margin: 0;
     }
 
+    .sidebar_row:hover{
+        width: 20%;
+    }
+
     .sidebar_row:nth-last-child(1){
         margin: 0;
     }
