@@ -65,6 +65,54 @@ main{
 
 /* PROFILE TEMPLATE STYLING */
 
+section, nav{
+    width: 80vw;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    gap: 30vw;
+    margin: 10vh 0;
+}
+
+section .col-md-4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--light);
+    cursor: pointer;
+}
+
+.row_edit, .row_logout{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+section .col-md-5{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--light);
+}
+
+hr{
+    margin: 3vh 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .col_nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 992px) {
 
     footer{
