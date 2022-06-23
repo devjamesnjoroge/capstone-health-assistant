@@ -171,6 +171,62 @@ a{
     text-decoration: none;
     color: var(--blue-green);
 }
+
+ /* POSTS TEMPLATE STYLING */
+
+ .posts .grid{
+    gap: 4rem;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+ }
+
+ .posts .grid .card{
+
+    display: flex;
+    flex-direction: column;
+    padding: 4vh 2rem;
+    background-color: var(--cream);
+    gap: .7rem;
+    border-radius: 10px;
+
+ }
+
+ .posts{
+    padding-bottom: 10vh !important;
+    margin-bottom: 10vh !important;
+ }
+
+ .posts .grid .card h4{
+    color: var(--blue-green);
+ }
+
+ .posts .grid .card hr{
+    background-color: var(--dark-green) !important;
+ }
+
+ .posts .grid .card {
+    color: black;
+ }
+
+ .card_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    background-color: var(--blue-green);
+    padding: 10px;
+    border-radius: 5px;
+ }
+
+ .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    cursor: pointer;
+ }
+
 @media screen and (max-width: 992px) {
 
     footer{
@@ -245,6 +301,7 @@ a{
     .history, .diet, .posts{
         width: 100%;
         padding: 0 5vw;
+        margin-bottom: 10vh;
     }
 
     
@@ -280,11 +337,11 @@ a{
 
   /* DASHBOARD TEMPLATE STYLING */
 
-    .dashboard{
+    .dashboard, .posts{
         margin-bottom: 10vh;
     }
 
-    .dashboard .grid{
+    .dashboard .grid, .posts .grid{
         grid-template-columns: repeat(1, 1fr);
     }
 }
