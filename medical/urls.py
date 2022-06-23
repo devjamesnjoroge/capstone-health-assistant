@@ -13,5 +13,6 @@ urlpatterns = [
     path('history/', views.history),
     path('diet/', views.diet),
     path('posts/', views.posts),
-    path('profile/new/', views.create_profile)
+    path('profile/new/', views.create_profile),
+    path('medical_history/new/', views.create_medical_history),
 ]

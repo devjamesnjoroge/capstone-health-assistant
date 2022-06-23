@@ -66,3 +66,16 @@ def create_profile(request):
         else:
             form = ProfileForm()
     return render(request, 'forms/create_profile.html', {'form': form})
+
+@login_required(login_url='/auth/login/')
+def create_medical_history(request):
+    if request.method == 'POST':
+        form = MedicalHistoryForm(request.POST)
+        if form.is_valid():
+            medical_history = form.save(commit=False)
+            medical_history.user = request.user
+            medical_history.save()
+            return redirect('/history/')
+    else:
+        form = MedicalHistoryForm()
+    return render(request, 'forms/create_medical_history.html', {'form': form})
