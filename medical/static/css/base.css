@@ -63,6 +63,11 @@ main{
     top: 0;
 }
 
+#lout{
+    position: absolute;
+    right: 0;
+    top: 2vh;
+}
 /* PROFILE TEMPLATE STYLING */
 
 .profile, nav{
