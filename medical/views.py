@@ -33,3 +33,6 @@ def profile(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html')
+
+def history(request):
+    return render(request, 'history.html')

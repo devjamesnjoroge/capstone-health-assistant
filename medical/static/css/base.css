@@ -114,7 +114,7 @@ nav .col_nav{
     color: var(--light);
 }
 
-/* DASHBOARD TEMPLATE STYLING */
+/* HISTORY TEMPLATE STYLING */
 
 .dashboard{
     display: flex;
@@ -143,6 +143,27 @@ nav .col_nav{
     position: absolute;
     bottom: 0;
     right: 0;
+    cursor: pointer;
+}
+
+/* DASHBOARD TEMPLATE STYLING */
+
+.history{
+    margin-top: 7vh;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.history .header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add{
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -216,6 +237,12 @@ nav .col_nav{
         margin-bottom: 10vh;
     }
 
+    /* HISTORY TEMPLATE STYLING */
+    .history{
+        width: 100%;
+        padding: 0 5vw;
+    }
+
     
 }
 
@@ -256,4 +283,74 @@ nav .col_nav{
     .dashboard .grid{
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+/* TABLES RESPONSIVENESS */
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: var(--blue-green); 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+
+    td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+    /*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Disease diagnosed"; }
+	td:nth-of-type(2):before { content: "Age diagnosed"; }
+	td:nth-of-type(3):before { content: "Treatment"; }
+	td:nth-of-type(4):before { content: "Lab results"; }
+	td:nth-of-type(5):before { content: "Recurrency"; }
 }
