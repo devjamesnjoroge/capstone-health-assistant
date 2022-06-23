@@ -79,3 +79,17 @@ def create_medical_history(request):
     else:
         form = MedicalHistoryForm()
     return render(request, 'forms/create_medical_history.html', {'form': form})
+
+
+@login_required(login_url='/auth/login/')
+def create_diet(request):
+    if request.method == 'POST':
+        form = DietForm(request.POST)
+        if form.is_valid():
+            diet = form.save(commit=False)
+            diet.user = request.user
+            diet.save()
+            return redirect('/diet/')
+    else:
+        form = DietForm()
+    return render(request, 'forms/create_diet.html', {'form': form})

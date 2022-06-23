@@ -15,4 +15,5 @@ urlpatterns = [
     path('posts/', views.posts),
     path('profile/new/', views.create_profile),
     path('medical_history/new/', views.create_medical_history),
+    path('diet/new/', views.create_diet),
 ]

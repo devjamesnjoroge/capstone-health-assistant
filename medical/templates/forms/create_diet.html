@@ -1,0 +1,16 @@
+{% extends 'forms/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5"> 
+        <div class="col-lg-6 offset-lg-3" id="form">
+            <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              <input class="btn" type="submit" value="Upload diet">
+            </form> 
+        </div>
+    </div>
+</div>
+{% endblock %}
