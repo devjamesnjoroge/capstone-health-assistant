@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 
 
 def index(request):
+    if request.user.username:
+        return redirect('/home/')
 
     return render(request, 'index.html')
 
@@ -28,3 +30,6 @@ def home(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+def dashboard(request):
+    return render(request, 'dashboard.html')
