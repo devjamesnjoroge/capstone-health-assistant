@@ -14,4 +14,11 @@ $(document).ready(function(){
             $('footer').replaceWith($('<header/>').html($('footer').html()));
         }
     }
+
+    $('#profile_link').click(function(){
+        window.location.replace("http://127.0.0.1:8000/profile/");
+    })
+    $('#home_link').click(function(){
+        window.location.replace("http://127.0.0.1:8000/home/");
+    })
 })
