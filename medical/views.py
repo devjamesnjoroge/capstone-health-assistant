@@ -53,6 +53,8 @@ def posts(request):
 
 @login_required(login_url='/auth/login/')
 def create_profile(request):
+    if request.user.profile:
+        return render(request, 'errors/403.html')
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
