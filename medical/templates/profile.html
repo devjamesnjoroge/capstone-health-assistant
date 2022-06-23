@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% if request.user.profile %}
 <section class="profile">
 
     <div class="col-md-4">
@@ -67,4 +68,9 @@
         <span>Favorites</span>            
     </div>
 </nav>
+{% else %}
+<div class="blank">
+    <a href="/profile/new/"> Create Profile</a>
+</div>
+{% endif %}
 {% endblock %}

@@ -13,4 +13,5 @@ urlpatterns = [
     path('history/', views.history),
     path('diet/', views.diet),
     path('posts/', views.posts),
+    path('profile/new/', views.create_profile)
 ]

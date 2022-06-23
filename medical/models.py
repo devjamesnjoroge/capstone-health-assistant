@@ -9,7 +9,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = CloudinaryField('images')
     age = models.PositiveIntegerField()
-    bio = models.CharField(max_length=100)
+    bio = models.TextField(max_length=100)
 
     def save_profile(self):
         self.save()

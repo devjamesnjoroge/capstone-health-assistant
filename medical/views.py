@@ -1,5 +1,8 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -24,21 +27,39 @@ def register(request):
 
     return render(request, 'authentication/register.html')
 
-
+@login_required(login_url='/auth/login/')
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url='/auth/login/')
 def profile(request):
     return render(request, 'profile.html')
 
+@login_required(login_url='/auth/login/')
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+@login_required(login_url='/auth/login/')
 def history(request):
     return render(request, 'history.html')
 
+@login_required(login_url='/auth/login/')
 def diet(request):
     return render(request, 'diet.html')
 
+@login_required(login_url='/auth/login/')
 def posts(request):
     return render(request, 'posts.html')
+
+@login_required(login_url='/auth/login/')
+def create_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return redirect('/profile/')
+    else:
+        form = ProfileForm()
+    return render(request, 'forms/create_profile.html', {'form': form})
