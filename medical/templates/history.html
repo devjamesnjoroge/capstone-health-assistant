@@ -37,6 +37,17 @@
             <td>N/A</td>
             <td>N/A</td>
         </tr>
+        {% if medical_history %}
+        {% for history in medical_history %}
+        <tr>
+            <td>{{history.disease_diagnosed}}</td>
+            <td>{{history.age_diagnosed}}</td>
+            <td>{{history.disease_treatment}}</td>
+            <td>{{history.lab_results}}</td>
+            <td>{{history.recurrency}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 </div>

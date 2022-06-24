@@ -37,6 +37,17 @@
             <td>fries</td>
             <td>2</td>
         </tr>
+        {% if diets %}
+        {% for diet in diets %}
+        <tr>
+            <td>{{diet.carbohydrates}}</td>
+            <td>{{diet.proteins}}</td>
+            <td>{{diet.vitamins}}</td>
+            <td>{{diet.junk}}</td>
+            <td>{{diet.water_litres}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 </div>

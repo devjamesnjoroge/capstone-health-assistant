@@ -38,11 +38,19 @@ def dashboard(request):
 
 @login_required(login_url='/auth/login/')
 def history(request):
-    return render(request, 'history.html')
+    if MedicalHistory.objects.filter(user=request.user).exists():
+        medical_history = MedicalHistory.objects.filter(user=request.user).all()
+    else:
+        medical_history = None
+    return render(request, 'history.html', {'medical_history': medical_history})
 
 @login_required(login_url='/auth/login/')
 def diet(request):
-    return render(request, 'diet.html')
+    if Diet.objects.filter(user=request.user).exists():
+        diets = Diet.objects.filter(user=request.user).all()
+    else:
+        diets = None
+    return render(request, 'diet.html', {'diets': diets})
 
 @login_required(login_url='/auth/login/')
 def posts(request):
