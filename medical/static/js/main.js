@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
     function wrapLinks(){
-        host = 'https://health-assistentee.herokuapp.com/';
+        // host = https://health-assistentee.herokuapp.com/
+        host = '/';
         locations = ['dashboard', 'history', 'posts', 'diet', 'profile']
         locations.map((loc)=>{
             $('#'+loc+'_link').click(function(){
