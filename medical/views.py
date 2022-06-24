@@ -93,3 +93,18 @@ def create_diet(request):
     else:
         form = DietForm()
     return render(request, 'forms/create_diet.html', {'form': form})
+
+
+@login_required(login_url='/auth/login/')
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect('/posts/')
+
+    else:
+        form = PostForm()
+    return render(request, 'forms/create_post.html', {'form': form})

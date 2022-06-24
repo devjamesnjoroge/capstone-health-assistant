@@ -18,3 +18,9 @@ class DietForm(forms.ModelForm):
         model = Diet
         fields = ['carbohydrates', 'proteins', 'vitamins', 'junk', 'water_litres']
         exclude = ['user']
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'content']
+        exclude = ['user']
