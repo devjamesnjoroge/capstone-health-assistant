@@ -67,5 +67,9 @@ class Post(models.Model):
     def delete_post(self):
         self.delete()
 
+    def search_by_title(cls,search_term):
+        post = cls.objects.filter(title__icontains=search_term)
+        return post
+
     def __repr__(self):
         print(self.user.username)
