@@ -28,6 +28,8 @@ header{
     width: 10%;
     height: 100vh;
     background-color: var(--dark-green);
+    position: fixed;
+    overflow-y: auto;
 }
 
 header .container{
@@ -58,7 +60,7 @@ svg{
 }
 
 main{
-    margin-left: 15%;
+    left: 15%;
     position: absolute;
     top: 0;
 }
