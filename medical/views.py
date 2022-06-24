@@ -9,7 +9,7 @@ from .forms import *
 
 def index(request):
     if request.user.username:
-        return redirect('/home/')
+        return redirect('/dashboard/')
 
     return render(request, 'index.html')
 
@@ -23,13 +23,10 @@ def register(request):
         password = request.POST['password']
         user = User.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
         user.save()
-        return redirect('/')
+        return redirect('/auth/login/')
 
     return render(request, 'authentication/register.html')
 
-@login_required(login_url='/auth/login/')
-def home(request):
-    return render(request, 'home.html')
 
 @login_required(login_url='/auth/login/')
 def profile(request):
