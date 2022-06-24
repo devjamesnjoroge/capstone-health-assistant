@@ -166,7 +166,7 @@ nav .col_nav{
     cursor: pointer;
 }
 
-/* DASHBOARD TEMPLATE STYLING */
+/* HISTORY TEMPLATE STYLING */
 
 .history, .diet, .posts{
     margin-top: 7vh;
@@ -317,7 +317,7 @@ a{
 
     /* DASHBOARD TEMPLATE STYLING */
     .dashboard{
-        padding-left: 5rem;
+        padding-left: 1rem;
         margin-bottom: 10vh;
     }
 
