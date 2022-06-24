@@ -250,6 +250,9 @@ a{
  }
 
 @media screen and (max-width: 992px) {
+    header{
+        left: 0 !important;
+    }
 
     footer{
         width: 100%;
