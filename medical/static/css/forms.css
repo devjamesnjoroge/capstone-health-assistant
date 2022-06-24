@@ -35,6 +35,12 @@ input[type='submit']{
     color: var(--light);
 }
 
-textarea{
-    max-height: 15vh;
+.posts textarea{
+    height: 30vh ;
 }
+
+textarea{
+    max-height: 20vh;
+    overflow-y: scroll;
+}
+

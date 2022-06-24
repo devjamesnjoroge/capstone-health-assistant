@@ -46,7 +46,11 @@ def diet(request):
 
 @login_required(login_url='/auth/login/')
 def posts(request):
-    return render(request, 'posts.html')
+    if Post.objects.all():
+        posts = Post.objects.all()
+    else:
+        posts = None
+    return render(request, 'posts.html', {'posts': posts})
 
 @login_required(login_url='/auth/login/')
 def create_profile(request):
