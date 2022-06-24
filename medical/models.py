@@ -53,3 +53,19 @@ class Diet(models.Model):
 
     def __repr__(self):
         print(self.user.username)
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    tags = models.TextField(max_length=100)
+    image = CloudinaryField('images', null = True, blank = True)
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    def __repr__(self):
+        print(self.user.username)

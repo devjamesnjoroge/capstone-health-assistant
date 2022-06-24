@@ -12,6 +12,7 @@ whitenoise = "*"
 django-heroku = "*"
 djangorestframework = "*"
 django-bootstrap4 = "*"
+gunicorn = "*"
 
 [dev-packages]
 
